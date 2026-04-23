@@ -20,8 +20,8 @@ The dataset consists of real responses detailing people's habits, physical attri
 * **Data Cleaning Highlight**: The script includes custom parsers to clean highly irregular user inputs for Age, Height (mixed cm/feet/inches), and Weight, followed by dynamic BMI calculation.
 
 ## **Exploratory Data Analysis**:
-* How many people felt drowsy after eating: ![EDA_1](EDA_1_How many people felt drowsy after eating.png)
-* Selected Features vs Drowsiness: ![EDA_2](EDA_2_Selected features vs Drowsiness.png)
+* How many people felt drowsy after eating: ![EDA_1](<EDA_1_How many people felt drowsy after eating.png>)
+* Selected Features vs Drowsiness: ![EDA_2](<EDA_2_Selected features vs Drowsiness.png>)
 
 ## 🧠 Machine Learning Pipeline
 The project utilizes a robust `scikit-learn` pipeline with `ColumnTransformer` to handle Numeric, Ordinal, and Nominal data perfectly. 
@@ -54,13 +54,13 @@ The script automatically generates several plots to evaluate the models and unde
 
 **1. Model Performance (ROC Curves & Confusion Matrices)**
 *The Logistic Regression and Random Forest models consistently show strong ability to distinguish between Food Coma vs. Alert states.*
-> `![ROC Curves](ROC Curves All models Compared.png)`
-> `![Confusion Matrices](Confusion Matrices for all the Models.png)`
+> `![ROC Curves](<ROC Curves All models Compared.png>)`
+> `![Confusion Matrices](<Confusion Matrices for all the Models.png>)`
 
 **2. What causes a Food Coma? (Feature Importance)**
 *Using SHAP and Permutation Importance, we can see exactly which features drive drowsiness. Meal Size, Carb Content, and Sleep Quality are the heaviest hitters.*
-> `![SHAP Beeswarm Plot](SHAP Beeswarm Plot.png)`
-> `![Feature Importance](Permutation Feature Importance all models.png)`
+> `![SHAP Beeswarm Plot](<SHAP Beeswarm Plot.png>)`
+> `![Feature Importance](<Permutation Feature Importance all models.png>)`
 
 ## 🎮 The Web App ("Could u survive this hour?")
 Don't want to run the python code? Just open the web app!
