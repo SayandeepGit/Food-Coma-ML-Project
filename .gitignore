@@ -1,0 +1,22 @@
+# Datasets
+*.csv
+*.dat
+*.out
+*.hdf5
+
+# Model weights
+*.pt
+*.pth
+*.h5
+*.pkl
+*.onnx
+
+# Python environments and caches
+venv/
+env/
+.env
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/

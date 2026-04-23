@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Food Coma Predictor</title>
+
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1E2A38, #00A8A8);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .card {
+    background: white;
+    padding: 30px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    text-align: center;
+    animation: fadeIn 1s ease;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  h1 {
+    color: #1E2A38;
+  }
+
+  p.subtitle {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 15px;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 12px;
+    text-align: left;
+  }
+
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+  }
+
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #FF7A00;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #e66a00;
+    transform: scale(1.03);
+  }
+
+  .result-box {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    display: none;
+    animation: pop 0.5s ease;
+  }
+
+  @keyframes pop {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+  }
+
+  .drowsy {
+    background: #ffe5e5;
+    color: #cc0000;
+  }
+
+  .alert {
+    background: #e6fff2;
+    color: #008f5a;
+  }
+
+  .confidence {
+    font-size: 14px;
+    margin-top: 8px;
+    opacity: 0.7;
+  }
+
+  .fun-text {
+    font-size: 13px;
+    margin-top: 10px;
+    font-style: italic;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Could u survive this hour?</h1>
+  <p class="subtitle">"Because lunch hits harder than deadlines"</p>
+
+  <label>Meal Size</label>
+  <select id="meal">
+    <option value="1">Light</option>
+    <option value="2">Medium</option>
+    <option value="3">Heavy</option>
+  </select>
+
+  <label>Stress Level (1–5)</label>
+  <select id="stress">
+    <option>1</option><option>2</option><option>3</option>
+    <option>4</option><option>5</option>
+  </select>
+
+  <label>Sleep Quality (1–5)</label>
+  <select id="sleep">
+    <option>1</option><option>2</option><option>3</option>
+    <option>4</option><option>5</option>
+  </select>
+
+  <button onclick="predict()">Predict My Fate</button>
+
+  <div id="resultBox" class="result-box"></div>
+</div>
+
+<script>
+function predict() {
+  let meal = parseInt(document.getElementById("meal").value);
+  let stress = parseInt(document.getElementById("stress").value);
+  let sleep = parseInt(document.getElementById("sleep").value);
+
+  let score = meal + stress - sleep;
+  let resultBox = document.getElementById("resultBox");
+
+  let resultText = "";
+  let funMessage = "";
+  let confidence = Math.min(95, 60 + score * 5);
+
+  if (score >= 4) {
+    resultText = "Likely Drowsy";
+    funMessage = "Bro... you're not studying after this";
+    resultBox.className = "result-box drowsy";
+  } else {
+    resultText = "Likely Alert";
+    funMessage = "Nice! You might survive this lecture";
+    resultBox.className = "result-box alert";
+  }
+
+  resultBox.style.display = "block";
+  resultBox.innerHTML = `
+    <div>${resultText}</div>
+    <div class="confidence">Confidence: ${confidence}%</div>
+    <div class="fun-text">${funMessage}</div>
+  `;
+}
+</script>
+
+</body>
+</html>
