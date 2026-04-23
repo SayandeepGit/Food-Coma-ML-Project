@@ -1,5 +1,7 @@
 # Food Coma Predictor 🍔💤
 
+**🎮 [Click here to use the live Web App!](https://SayandeepGit.github.io/Food-Coma-ML-Project/Lets_play.html)**
+
 Have you ever wondered why you feel incredibly sleepy after a heavy lunch? This project analyzes the classic "Food Coma" phenomenon using real-world survey data, Machine Learning models, and SHAP explainability to determine exactly what triggers post-meal drowsiness. 
 
 As a bonus, it includes a fun, interactive web app where you can predict your own fate before your next meal!
