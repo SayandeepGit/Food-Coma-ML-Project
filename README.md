@@ -54,13 +54,13 @@ The script automatically generates several plots to evaluate the models and unde
 
 **1. Model Performance (ROC Curves & Confusion Matrices)**
 *The Logistic Regression and Random Forest models consistently show strong ability to distinguish between Food Coma vs. Alert states.*
-> `![ROC Curves](<ROC Curves All models Compared.png>)`
-> `![Confusion Matrices](<Confusion Matrices for all the Models.png>)`
+> ![ROC Curves](<ROC Curves All models Compared.png>)
+> ![Confusion Matrices](<Confusion Matrices for all the Models.png>)
 
 **2. What causes a Food Coma? (Feature Importance)**
 *Using SHAP and Permutation Importance, we can see exactly which features drive drowsiness. Meal Size, Carb Content, and Sleep Quality are the heaviest hitters.*
-> `![SHAP Beeswarm Plot](<SHAP Beeswarm Plot.png>)`
-> `![Feature Importance](<Permutation Feature Importance all models.png>)`
+> ![SHAP Beeswarm Plot](<SHAP Beeswarm Plot.png>)
+> ![Feature Importance](<Permutation Feature Importance all models.png>)
 
 ## 🎮 The Web App ("Could u survive this hour?")
 Don't want to run the python code? Just open the web app!
